@@ -226,7 +226,19 @@
         </defs>
       </svg>
       <h1>Hello, {{ title }}</h1>
+      <nav>
+        <div class="breadcrumb">
+          <a routerLink="/" class="breadcrumb-item">Home</a>
+          <ng-container *ngFor="let breadcrumb of getBreadcrumbs()">
+            <span class="breadcrumb-separator">/</span>
+            <a [routerLink]="breadcrumb.url" class="breadcrumb-item">
+              {{ breadcrumb.label }}
+            </a>
+          </ng-container>
+        </div>
+      </nav>
       <p>Congratulations! Your app is running. 🎉</p>
+      <router-outlet></router-outlet>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

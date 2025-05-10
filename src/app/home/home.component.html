@@ -1,0 +1,33 @@
+<div>
+  <h1>Welcome to Our Website</h1>
+  <p>This is the home page of our Angular application.</p>
+  <div class="home-container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Windsurf Adventures Await</h1>
+        <p>Discover the thrill of riding the waves, exploring new horizons, and experiencing the ultimate freedom of windsurfing.</p>
+        <div class="hero-actions">
+          <button mat-raised-button color="primary" routerLink="/about">Learn More</button>
+          <button mat-stroked-button color="accent" routerLink="/contact">Get Started</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Why Choose Windsurf?</h2>
+      <mat-grid-list cols="3" rowHeight="350px">
+        <mat-grid-tile *ngFor="let feature of features">
+          <mat-card class="feature-card">
+            <mat-card-header>
+              <mat-icon mat-card-avatar>{{ feature.icon }}</mat-icon>
+              <mat-card-title>{{ feature.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ feature.description }}</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </section>
+  </div>
+</div>
